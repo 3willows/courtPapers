@@ -1,1 +1,0 @@
-@tailwind base;@tailwind components;@tailwind utilities;html{height:100%}.pagebreak{border:solid;border-width:5px;line-height:normal;border-color:#475569}@media print{.pagebreak{page-break-before:always;border-color:#fff}}
