@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Wrapper from "./pages/Wrapper";
 
+import  Landing  from "./pages/Landing";
+import EnterInfo from "./pages/EnterInfo.jsx";
+import AffidavitOfApplicant from "./pages/AffidavitOfApplicant";
+import AffidavitOfIdentity from "./pages/AffidavitOfIdentity";
+import NoticeOfMotion from "./pages/NoticeOfMotion";
+import CoverLetters from "./pages/CoverLetters";
+import ErrorPage from "./pages/ErrorPage";
+
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <HashRouter>
+      <Wrapper>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="info" element={<EnterInfo />} />
+          <Route path="notice" element={<NoticeOfMotion />} />
+          <Route path="applicant" element={<AffidavitOfApplicant />} />
+          <Route path="id" element={<AffidavitOfIdentity />} />
+          <Route path="letters" element={<CoverLetters />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Wrapper>
+    </HashRouter>
+  );
 }
-
-export default App
