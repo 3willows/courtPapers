@@ -91,7 +91,7 @@ export default function EnterInfo() {
         </div>
         <div className="flex flex-row-reverse">
           <button
-            onClick={() => htmlCssExportWord(sourceRef, TailwindStyles, `Barrister Admission Bundle(beta).doc`)}
+            onClick={() => htmlCssExportWord(sourceRef.current.innerHTML, TailwindStyles, `Barrister Admission Bundle(beta).doc`)}
           >
               Download as Word.doc file
           </button>
