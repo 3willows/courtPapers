@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAppContext } from "../context.jsx";
 
-export function DataInput({ prop }) {
+export function DataSelect({ prop }) {
   const Context = useAppContext();
   const dispatch = Context.dispatch;
   const value = Context[prop];

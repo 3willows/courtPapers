@@ -1,19 +1,19 @@
-import { useRef } from "react";
-import { useAppContext } from "../context.jsx";
-import { DataInput } from "../components/DataInput.jsx";
-import { ComponentToPrint } from "../helper/ComponentToPrint.jsx";
-import { htmlCssExportWord } from "html-css-export-word";
-import { TailwindStyles } from "../helper/TailwindStyles";
+import { useRef } from "react"
+import { useAppContext } from "../context.jsx"
+import { DataInput } from "../components/DataInput.jsx"
+import { ComponentToPrint } from "../helper/ComponentToPrint.jsx"
+import { htmlCssExportWord } from "html-css-export-word"
+import { TailwindStyles } from "../helper/TailwindStyles"
 
 export default function EnterInfo() {
-  const { dispatch, idAffidavit, applicantAffidavit } = useAppContext();
-  const sourceRef = useRef(null);
+  const { dispatch, idAffidavit, applicantAffidavit } = useAppContext()
+  const sourceRef = useRef(null)
 
   function handleAffidavit(relevantAffidavit, e) {
     if (e.target.checked) {
-      dispatch({ type: relevantAffidavit, payload: true });
+      dispatch({ type: relevantAffidavit, payload: true })
     } else {
-      dispatch({ type: relevantAffidavit, payload: false });
+      dispatch({ type: relevantAffidavit, payload: false })
     }
   }
 
@@ -23,10 +23,20 @@ export default function EnterInfo() {
         Changes are immediately reflected in the "Select Document" Tab.
       </h2>
       <div className="m-4 text-left sm:hidden">
-      Download only available on laptop/desktop.
+        Download only available on laptop/desktop.
       </div>
       <article className="m-4 grid-cols-2 gap-4 md:grid ">
         <div>
+          <h3 className=" my-1 font-bold">Case number</h3>
+          <div className="grid grid-cols-2 gap-2">
+            <span>Forum</span>
+            <select name="" id="">
+              <option value="">High Court</option>
+              <option value="">District Court</option>
+            </select>
+            <span>Case Type</span>
+            <select name="" id=""></select>
+          </div>
           <h3 className=" my-1 font-bold">The Applicant</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Name</span>
@@ -84,19 +94,25 @@ export default function EnterInfo() {
           Changes are immediately reflected in the "Select Document" Tab.
         </p>
         <p className="hidden sm:block">
-        Download only available on laptop/desktop.
+          Download only available on laptop/desktop.
         </p>
         <div className="hidden">
           <ComponentToPrint ref={sourceRef} id="source-html" />
         </div>
         <div className="flex flex-row-reverse">
           <button
-            onClick={() => htmlCssExportWord(sourceRef.current.innerHTML, TailwindStyles, `Barrister Admission Bundle(beta).doc`)}
+            onClick={() =>
+              htmlCssExportWord(
+                sourceRef.current.innerHTML,
+                TailwindStyles,
+                `Barrister Admission Bundle(beta).doc`
+              )
+            }
           >
-              Download as Word.doc file
+            Download as Word.doc file
           </button>
         </div>
       </div>
     </div>
-  );
+  )
 }
