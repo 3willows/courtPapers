@@ -12,7 +12,7 @@ export default function Wrapper({ children }) {
     <div className=" min-h-100vh text-normal my-2 flex  h-screen  flex-col  bg-slate-100 font-serif leading-relaxed text-black md:text-lg">
       <header className="bg-slate-600 p-2 text-white">
         <h1 className="sticky m-1 mt-2 text-left text-xl font-bold">
-        Legal templates generator (beta)
+          Barrister Admission Bundle (Beta)
         </h1>
         <nav
           className="m-1 flex grid-cols-3 flex-col justify-between 
