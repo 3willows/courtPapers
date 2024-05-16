@@ -4,6 +4,7 @@ import { DataInput } from "../components/DataInput.jsx"
 import { ComponentToPrint } from "../helper/ComponentToPrint.jsx"
 import { htmlCssExportWord } from "html-css-export-word"
 import { TailwindStyles } from "../helper/TailwindStyles"
+import { highCourtcaseTypes } from "../caseTypes/HighCourtcaseTypes.jsx"
 
 export default function EnterInfo() {
   const { dispatch, idAffidavit, applicantAffidavit } = useAppContext()
@@ -27,6 +28,8 @@ export default function EnterInfo() {
       </div>
       <article className="m-4 grid-cols-2 gap-4 md:grid ">
         <div>
+        <button onClick={() => console.log(highCourtcaseTypes)}>gekki</button>
+
           <h3 className=" my-1 font-bold">Case number</h3>
           <div className="grid grid-cols-2 gap-2">
             <span>Forum</span>
